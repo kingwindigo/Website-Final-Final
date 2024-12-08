@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang = "en">
+<style>
+    p { color: green}
+    a {color: green}
+    h1 { color: green}
+
+</style>
+
+
+    <head> 
+        <meta charset ="UTF-8">
+        <meta name ="viewport" content = "width=device-width, initial-scale=1">
+        <title >Green Explorer Main Page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    </head>
+
+ <body style = "background-color: black;"> 
+
+
+    <header>
+        <a href = "Website.html" class = "logo"> Green Explorer</a>
+        
+        <nav>
+            <a href = "Website.html" class = "active"> Home</a>
+            <a href = "Travel.html" > Travel </a>
+            <a href = "Plans.html" > Plans </a>
+            <a href = "Services.html" > Services </a>
+            <a href = "Contact.html" > Contact</a>
+        </nav>
+        <div class="search-container" size="50">
+            <input type="text" id="search" class="search-bar" placeholder="Looking for something specific?">
+                <button class="search-button" center onclick="searchFunction()">Search</button> 
+        </div>
+    </header>
+
+
+
+
+    <section class ="home">
+       
+        <div class = "home-img">
+            <img src = "Images/Logo.png" alt="">
+        </div>
+        <div class = "home-content">
+            <h1> <span style = "color:green"> Green Explorer Club</span></h1>
+            <h3 class = "typing-test" style = "color:green"> Cebu's 1# Tour Guide community<span></span></h3>
+            <p>A Community of like-minded people with the goal of reaching the top and finishing goals!</p>
+       <div class ="social-icons">
+        <a href = "https://www.linkedin.com/login"> <i class = "fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/kingwindigo"><i class="fa-brands fa-github"></i></a>
+        <a href="https://x.com/?lang=en"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+   
+       </div>
+       <a href="" class="btn">Book Now!</a>
+       <button class="btn" onclick="alert('Redirecting to registration...')">
+        Register Now
+        </button>
+        <button class="btn" onclick="alerts('Redirecting to registration...')">
+            Login Now
+            </button>
+        </div>
+        
+        
+    </section>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h2>Your Next Great Adventure Starts Here</h2>
+        <p>
+            Whether you're a seasoned explorer or a first-time adventurer, we have the perfect hikes and experiences 
+            waiting for you. Breathtaking views, professional guides, and unforgettable memories—just a step away.
+        </p>
+        
+        <!-- Video Container -->
+        <div class="video-container">
+            <video controls poster="https://via.placeholder.com/800x450?text=Adventure+Preview">
+                <source src="Videos/469404464_28346763461574608_3906457159159813910_n.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <!-- Call to Action Button -->
+        <button class="cta-button" onclick="alert('Start your adventure now!')">
+            Explore Now
+        </button>
+    </section>
+
+
+    <section class = "section-introduction-website">
+    <div class = "row">
+        <div class = "introduction-website">
+            <h1 >We are a group of enthusiastic hiking professionals eager to explore Cebu's sights!</h1>
+            <p>A Community of fitness, Well maintained self, Entertainment, Joy, and overall adventurous, Step in now and join us on a breaktaking journey
+                towards the top of the mountains! 
+            </p>
+        </div>
+        <div class = "introduction-website">
+            <img src = "images/sirao peak.jpg">
+        </div>
+    </div>
+</section>
+
+<script>
+    function alerts(){
+        window.location.href = 'register.html';
+    }
+    function alert(){
+        window.location.href = 'Login.html';
+
+    }
+</script>
+
+
+ <!-- Footer -->
+ <footer>
+    Travel Schedule | Green Explorer Club &copy;
+</footer>
+</body>
+<script>
+    function searchFunction() {
+
+     var typoMap = {
+             'hoem': 'home',
+             'hoems': 'home',
+             'plaens': 'plans',
+             'scedule': 'schedule',
+             'hoempage': 'homepage',
+             'plan': 'plans'
+         };
+         // Get the value from the input field
+         var searchTerm = document.getElementById('search').value.trim().toLowerCase();
+
+         if (typoMap[searchTerm]) {
+             searchTerm = typoMap[searchTerm];
+         }
+         
+         // Check if the value is "Main"
+         if (searchTerm === 'main' || searchTerm === 'home' || searchTerm === 'homes' || searchTerm === 'homepage' || searchTerm === 'introduction') {
+             // Redirect to Website.HTML if the user types 'Main'
+             window.location.href = 'Website.html';
+         } 
+         
+         else if(searchTerm === 'plans' || searchTerm === 'schedule' || searchTerm === 'date' || searchTerm === 'time'){
+             window.location.href = "Plans.html";
+         }
+
+         else if(searchTerm === 'services' || searchTerm === 'offers' || searchTerm === 'discount'){
+             window.location.href = "Services.html";
+         }
+
+         else if(searchTerm === 'book' || searchTerm === 'booking'){
+             window.location.href = "Book.html";
+         }
+
+         else if(searchTerm === 'contact' || searchTerm === 'number' || searchTerm === 'email' || searchTerm === 'website'){
+             window.location.href = "Contact.html";
+         }
+         else if(searchTerm === 'travel' || searchTerm === 'location' || searchTerm === 'available'){
+             window.location.href = "Travel.html";
+         }
+         
+         
+         
+         
+         else {    
+             alert("No matching page found for '" + searchTerm + "'" + " or there is a syntax error");
+         }
+     }
+
+     
+     var map = L.map('map');
+     map.setView([10.403715 , 123.868028], 19);
+     
+
+     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+ maxZoom: 19,
+ attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+ }).addTo(map);
+
+ navigator.geolocation.watchPosition(success, error);
+ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+ maxZoom: 19,
+ attribution: '© OpenStreetMap'
+ }).addTo(map); 
+ let marker, circle, zoomed;
+ L.marker([10.403715 , 123.868028]).addTo(map);
+ L.circle([10.403715 , 123.868028]).addTo(map);
+
+ navigator.geolocation.watchPosition(success, error);
+ function success(pos) {
+
+ const lat = pos.coords.latitude;
+ const lng = pos.coords.longitude;
+ const accuracy = pos.coords.accuracy;
+
+ if (marker) {
+     map.removeLayer(marker);
+    map.removeLayer(circle);
+ }
+// Removes any existing marker and circule (new ones about to be set)
+
+ marker = L.marker([lat, lng]).addTo(map);
+ circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
+// Adds marker to the map and a circle for accuracy
+
+ if (!zoomed) {
+     zoomed = map.fitBounds(circle.getBounds()); 
+ }
+// Set zoom to boundaries of accuracy circle
+
+ map.setView([lat, lng]);
+// Set map focus to current user position
+
+}
+
+function error(err) {
+
+if (err.code === 1) {
+ alert("Please allow geolocation access");
+} else {
+ alert("Cannot get current location");
+}
+
+}
+
+ </script>
+
+</html>    
